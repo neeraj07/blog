@@ -1,0 +1,22 @@
+<h1>All Articles</h1>
+<table>
+<ul id="articles">
+  <% @articles.each do |article| %>
+     
+
+    <li>
+      <%= link_to article.title, article_path(article) %>
+    </li>
+  <% end %>
+</ul>
+</table>
+<%= link_to "Create a New Article", new_article_path, class: "new_article" %>
+</br> </br>
+<!-- 
+<% if current_user %>
+   <%= link_to "Sign out", destroy_user_session_path, method: 'DELETE' %>
+<% else %>
+    <%= link_to "Login",  user_session_path , method: 'post' %>
+<% end -%>
+ --> 
+

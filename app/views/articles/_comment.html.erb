@@ -1,0 +1,23 @@
+<table>
+	<tr>
+	    <td>
+	    	<h4><%= comment.author_name %>:</h4>
+        </td>
+        <td>
+		     <%= comment.body %>&nbsp;&nbsp;&nbsp;&nbsp
+		</td>
+		<td>
+			<p  style="color:blue"> <%= distance_of_time_in_words(comment.article.created_at, comment.created_at) %> later &nbsp;&nbsp</p>
+
+		</td>
+		<td>
+			 <%= link_to 'Edit', edit_article_comment_path(@article, comment) %>
+        </td>
+		<td>
+			 <%= link_to 'Delete', article_comment_path(@article, comment),  method: :delete, data: { confirm: 'Are you sure?' }%>
+	    </td>
+	</tr>
+</table>
+
+
+
